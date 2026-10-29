@@ -11,46 +11,46 @@ const iconMap: { [key: string]: React.ElementType } = {
 
 export const ValueProps: React.FC = () => {
   return (
-    <section id="ventajas" className="py-20 bg-brand-card/40 border-t border-brand-border/60 relative">
+    <section id="ventajas" className="py-20 bg-brand-surface border-t border-white/[0.06] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Encabezado */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-brand-accent text-xs font-bold uppercase tracking-wider mb-3">
+        {/* Encabezado Minimalista */}
+        <div className="text-center max-w-xl mx-auto mb-14">
+          <span className="text-xs font-mono font-semibold tracking-wider text-brand-accent uppercase block mb-2">
             Compromiso y Servicio
-          </div>
+          </span>
           <h2 className="font-heading font-black text-2xl sm:text-4xl text-white tracking-tight">
             ¿Por qué consultar en Hugo Repuestos?
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-300">
-            Brindamos una experiencia de compra cercana, honesta y especializada para particulares, conductores y talleres mecánicos de Bariloche.
+          <p className="mt-2 text-sm text-slate-400">
+            Atención cercana, honesta y especializada para conductores y talleres mecánicos de Bariloche.
           </p>
         </div>
 
-        {/* Grilla de ventajas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Grilla de ventajas minimalista */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {SITE_CONFIG.advantages.map((item, index) => {
             const IconComponent = iconMap[item.icon] || Wrench;
             return (
               <div
                 key={index}
-                className="relative rounded-2xl bg-slate-900/90 border border-brand-border p-6 shadow-xl hover:border-brand-accent/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
+                className="relative rounded-2xl bg-brand-card border border-white/[0.07] p-6 shadow-sm hover:border-brand-accent/40 hover:-translate-y-0.5 transition-all duration-200 group flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500/15 to-brand-accent/5 border border-brand-accent/20 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-brand-accent group-hover:text-white transition-all duration-300 text-brand-accent">
-                    <IconComponent className="w-6 h-6" />
+                  <div className="w-10 h-10 rounded-xl bg-brand-surface border border-white/[0.08] flex items-center justify-center mb-5 group-hover:border-brand-accent/30 transition-all text-brand-accent">
+                    <IconComponent className="w-5 h-5" />
                   </div>
-                  <h3 className="font-heading font-bold text-lg text-white group-hover:text-red-400 transition-colors">
+                  <h3 className="font-heading font-bold text-base text-white group-hover:text-brand-accent transition-colors">
                     {item.title}
                   </h3>
-                  <p className="mt-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="mt-2 text-xs text-slate-300 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-white/5 flex items-center gap-1.5 text-xs font-medium text-slate-400">
-                  <Check className="w-4 h-4 text-emerald-400" />
-                  <span>Atención en Bariloche</span>
+                <div className="mt-5 pt-3 border-t border-white/[0.06] flex items-center gap-1.5 text-[11px] font-mono text-slate-400">
+                  <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>San Carlos de Bariloche</span>
                 </div>
               </div>
             );

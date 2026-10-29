@@ -13,7 +13,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu, isMobileMenuOp
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -21,62 +21,55 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu, isMobileMenuOp
 
   return (
     <>
-      {/* Top Banner informativo con teléfono y dirección de Bariloche */}
-      <div className="bg-slate-900/90 border-b border-white/5 py-1.5 px-4 text-xs text-slate-400 hidden sm:block">
+      {/* Top Banner minimalista informativo */}
+      <div className="bg-brand-surface/90 border-b border-white/[0.05] py-1 px-4 text-[11px] text-slate-400 hidden sm:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 hover:text-slate-200 transition-colors">
-              <MapPin className="w-3.5 h-3.5 text-brand-accent" />
+          <div className="flex items-center gap-5">
+            <span className="flex items-center gap-1.5 text-slate-300">
+              <MapPin className="w-3 h-3 text-brand-accent" />
               <span>{SITE_CONFIG.business.address} · {SITE_CONFIG.business.city}</span>
             </span>
             <a 
               href={`tel:${SITE_CONFIG.business.phone.replace(/\D/g, '')}`}
-              className="flex items-center gap-1.5 hover:text-slate-200 transition-colors"
+              className="flex items-center gap-1.5 hover:text-white transition-colors"
             >
-              <Phone className="w-3.5 h-3.5 text-brand-accent" />
+              <Phone className="w-3 h-3 text-slate-400" />
               <span>{SITE_CONFIG.business.phoneDisplay}</span>
             </a>
           </div>
-          <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 text-emerald-400">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              Atención y cotizaciones por WhatsApp
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              Consultas y cotizaciones online
             </span>
           </div>
         </div>
       </div>
 
-      {/* Barra de navegación principal */}
+      {/* Barra de navegación principal minimalista */}
       <header 
         className={`sticky top-0 z-40 w-full transition-all duration-300 ${
           isScrolled 
-            ? 'bg-brand-dark/95 backdrop-blur-md border-b border-brand-border/80 shadow-2xl shadow-black/50 py-3.5' 
-            : 'bg-brand-dark/80 backdrop-blur-sm border-b border-white/5 py-4'
+            ? 'bg-brand-dark/95 backdrop-blur-md border-b border-white/[0.07] py-3' 
+            : 'bg-brand-dark/80 backdrop-blur-sm border-b border-white/[0.04] py-3.5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
-          {/* Logotipo */}
-          <a href="#inicio" className="group flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 rounded-lg p-1">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-accent to-red-900 flex items-center justify-center shadow-lg shadow-brand-accent/20 group-hover:scale-105 transition-transform duration-200">
-              {/* Gear / Automotive Icon */}
-              <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="3" />
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
-              </svg>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-heading font-black text-xl tracking-wider text-white flex items-center gap-1.5">
-                HUGO <span className="text-brand-accent">REPUESTOS</span>
-              </span>
-              <span className="text-[10px] tracking-widest uppercase text-slate-400 font-semibold">
-                San Carlos de Bariloche
-              </span>
-            </div>
+          {/* Logotipo Oficial Hugo Repuestos */}
+          <a href="#inicio" className="group flex items-center gap-3 focus:outline-none rounded-lg">
+            <img
+              src="/logo.png"
+              alt="Hugo Repuestos — Industrial y Automotriz"
+              className="h-8 sm:h-9 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+            />
+            <span className="hidden xl:inline-block text-[10px] font-mono tracking-widest uppercase text-slate-400 border-l border-white/10 pl-2.5">
+              Bariloche
+            </span>
           </a>
 
-          {/* Menú de Navegación de Escritorio */}
-          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+          {/* Menú de Navegación de Escritorio Minimalista */}
+          <nav className="hidden lg:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-slate-300">
             <a 
               href="#inicio" 
               className="hover:text-white transition-colors duration-150 py-1"
@@ -105,7 +98,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu, isMobileMenuOp
               href="#nosotros" 
               className="hover:text-white transition-colors duration-150 py-1"
             >
-              Sobre Nosotros
+              Nosotros
             </a>
             <a 
               href="#ubicacion" 
@@ -122,10 +115,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu, isMobileMenuOp
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Consultar por WhatsApp con Hugo Repuestos"
-              className="relative inline-flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-slate-950 font-semibold text-sm shadow-lg shadow-whatsapp/20 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-whatsapp/50 group"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-slate-950 font-bold text-xs tracking-wide shadow-md shadow-whatsapp/20 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-whatsapp/50 group"
             >
-              <MessageCircle className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" />
-              <span>Consultar por WhatsApp</span>
+              <MessageCircle className="w-3.5 h-3.5 fill-current group-hover:scale-110 transition-transform" />
+              <span>WhatsApp</span>
             </a>
           </div>
 
@@ -136,17 +129,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu, isMobileMenuOp
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              className="sm:hidden p-2.5 rounded-xl bg-whatsapp text-slate-950 font-semibold shadow-md active:scale-95 transition-transform"
+              className="sm:hidden p-2 rounded-lg bg-whatsapp text-slate-950 font-bold active:scale-95 transition-transform"
             >
-              <MessageCircle className="w-5 h-5 fill-current" />
+              <MessageCircle className="w-4 h-4 fill-current" />
             </a>
 
             <button
               onClick={onOpenMobileMenu}
               aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú de navegación'}
-              className="p-2.5 rounded-xl bg-slate-900 border border-brand-border text-slate-300 hover:text-white hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-accent/50"
+              className="p-2 rounded-lg bg-brand-surface border border-white/[0.08] text-slate-300 hover:text-white transition-colors focus:outline-none"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 

@@ -1,10 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="14" fill="#0B0F17"/>
-  <rect x="2" y="2" width="60" height="60" rx="12" stroke="#DC2626" stroke-width="2" stroke-opacity="0.6"/>
-  <!-- Automotive Gear & Piston Icon -->
-  <circle cx="32" cy="32" r="18" stroke="#DC2626" stroke-width="4" stroke-dasharray="4 2"/>
-  <circle cx="32" cy="32" r="9" fill="#DC2626"/>
-  <path d="M32 10V18M32 46V54M10 32H18M46 32H54" stroke="#DC2626" stroke-width="4" stroke-linecap="round"/>
-  <path d="M16.4 16.4L22.1 22.1M41.9 41.9L47.6 47.6M16.4 47.6L22.1 41.9M41.9 22.1L47.6 16.4" stroke="#DC2626" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="32" cy="32" r="4" fill="#FFFFFF"/>
+  <rect width="64" height="64" rx="14" fill="#050507"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" stroke="#FD3001" stroke-width="2" stroke-opacity="0.5"/>
+  <!-- Stylized H from Hugo Repuestos -->
+  <path d="M14 32H30M22 18L14 46M38 18L30 46" stroke="#FD3001" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Modern Geometric Accent -->
+  <path d="M38 20L48 20C50 20 52 22 51 25L46 38C45 41 42 43 39 43L34 43" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

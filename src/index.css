@@ -9,40 +9,45 @@
   }
 
   body {
-    background-color: #0B0F17;
-    color: #F3F4F6;
+    background-color: #050507;
+    color: #EDEDED;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
-  /* Custom scrollbar */
+  ::selection {
+    background-color: #FD3001;
+    color: #FFFFFF;
+  }
+
+  /* Scrollbar minimalista */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #0B0F17;
+    background: #050507;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1F2937;
-    border-radius: 4px;
+    background: #1A1D24;
+    border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #374151;
+    background: #282C37;
   }
 }
 
 @layer utilities {
-  .text-glow {
-    text-shadow: 0 0 20px rgba(220, 38, 38, 0.45);
-  }
-  .card-gradient {
-    background: linear-gradient(180deg, rgba(22, 27, 34, 0.95) 0%, rgba(13, 17, 23, 0.98) 100%);
+  .text-glow-accent {
+    text-shadow: 0 0 24px rgba(253, 48, 1, 0.4);
   }
   .subtle-border {
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.07);
   }
   .subtle-border-accent {
-    border: 1px solid rgba(220, 38, 38, 0.3);
+    border: 1px solid rgba(253, 48, 1, 0.35);
+  }
+  .marquee-pause:hover .animate-marquee {
+    animation-play-state: paused;
   }
 }
 
