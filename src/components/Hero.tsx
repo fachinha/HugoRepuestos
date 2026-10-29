@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowDown, MessageCircle, MapPin, Sparkles } from 'lucide-react';
 import { BrandCarousel } from './BrandCarousel';
+import { getGeneralContactWhatsAppUrl } from '../utils/whatsapp';
 
 export const Hero: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ export const Hero: React.FC = () => {
       {/* Fondo cinematográfico automotriz con overlay minimalista */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=2000&q=80"
+          src="https://images.unsplash.com/photo-1613214149922-f1809c99b414?auto=format&fit=crop&w=2000&q=80"
           alt="Taller y repuestos automotrices"
           className="w-full h-full object-cover object-center filter brightness-[0.22] contrast-[1.15]"
         />
@@ -52,47 +53,55 @@ export const Hero: React.FC = () => {
           </a>
         </div>
 
-        {/* Las 3 Tarjetas con Cotización Online como punto prioritario */}
+        {/* Las 3 Tarjetas interactivas con Cotización Online en fondo rojo de alta visibilidad */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl w-full text-left mb-6">
           
-          {/* Tarjeta 1: Cotización Online (Reemplazando Pieza Exacta) */}
+          {/* Tarjeta 1: Cotización Online (Fondo Rojo de Alta Visibilidad) */}
           <a
             href="#cotizador"
-            className="flex items-center gap-3.5 p-4 rounded-2xl bg-zinc-950/90 border border-brand-accent/40 hover:border-brand-accent backdrop-blur-sm transition-all group cursor-pointer"
+            className="flex items-center gap-3.5 p-4 rounded-2xl bg-brand-accent hover:bg-[#e02800] text-white shadow-xl shadow-brand-accent/25 border border-brand-accent/80 transition-all duration-200 group cursor-pointer hover:scale-[1.02]"
           >
-            <div className="w-10 h-10 rounded-xl bg-brand-accent/15 border border-brand-accent/30 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-              <Sparkles className="w-5 h-5 text-brand-accent" />
+            <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div>
-              <p className="text-sm font-bold text-white leading-snug flex items-center gap-1.5">
+              <p className="text-sm font-extrabold text-white leading-snug flex items-center gap-1.5">
                 <span>Cotización Online</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
               </p>
-              <p className="text-xs text-slate-400">Respuesta rápida para tu vehículo</p>
+              <p className="text-xs text-white/90 font-medium">Respuesta rápida para tu vehículo</p>
             </div>
           </a>
 
-          {/* Tarjeta 2: Respuesta Rápida / Atención directa por WhatsApp */}
-          <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-zinc-950/80 border border-zinc-900 backdrop-blur-sm hover:border-emerald-500/40 transition-colors">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center shrink-0">
+          {/* Tarjeta 2: Respuesta Rápida / Atención directa por WhatsApp (Clickeable a WhatsApp) */}
+          <a
+            href={getGeneralContactWhatsAppUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3.5 p-4 rounded-2xl bg-zinc-950/80 border border-zinc-900 backdrop-blur-sm hover:border-emerald-500/50 hover:bg-emerald-950/20 transition-all duration-200 group cursor-pointer hover:scale-[1.02]"
+          >
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
               <MessageCircle className="w-5 h-5 text-emerald-400" />
             </div>
             <div>
-              <p className="text-sm font-bold text-white leading-snug">Respuesta Rápida</p>
+              <p className="text-sm font-bold text-white leading-snug group-hover:text-emerald-400 transition-colors">Respuesta Rápida</p>
               <p className="text-xs text-slate-400">Atención directa por WhatsApp</p>
             </div>
-          </div>
+          </a>
 
-          {/* Tarjeta 3: Local en Bariloche / Retiro en Fagnano 1065 (Ejemplo) */}
-          <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-zinc-950/80 border border-zinc-900 backdrop-blur-sm hover:border-brand-accent/40 transition-colors">
-            <div className="w-10 h-10 rounded-xl bg-brand-accent/10 border border-brand-accent/25 flex items-center justify-center shrink-0">
+          {/* Tarjeta 3: Local en Bariloche (Clickeable hacia la sección de ubicación) */}
+          <a
+            href="#ubicacion"
+            className="flex items-center gap-3.5 p-4 rounded-2xl bg-zinc-950/80 border border-zinc-900 backdrop-blur-sm hover:border-brand-accent/50 hover:bg-white/[0.04] transition-all duration-200 group cursor-pointer hover:scale-[1.02]"
+          >
+            <div className="w-10 h-10 rounded-xl bg-brand-accent/10 border border-brand-accent/25 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
               <MapPin className="w-5 h-5 text-brand-accent" />
             </div>
             <div>
-              <p className="text-sm font-bold text-white leading-snug">Local en Bariloche</p>
-              <p className="text-xs text-slate-400">Retiro en Fagnano 1065 (Ejemplo)</p>
+              <p className="text-sm font-bold text-white leading-snug group-hover:text-brand-accent transition-colors">Local en Bariloche</p>
+              <p className="text-xs text-slate-400">Retiro en Fagnano 1065 (Local 1)</p>
             </div>
-          </div>
+          </a>
 
         </div>
 

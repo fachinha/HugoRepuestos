@@ -74,7 +74,7 @@ export const SITE_CONFIG = {
       name: 'Rodamientos y Rulemanes',
       shortDescription: 'Rulemanes de rueda, maza, crapodinas de embrague, rodamientos industriales y tensores.',
       badge: 'Especialidad',
-      image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80',
+      image: '/images/categories/rodamientos.jpg',
       commonParts: ['Rulemanes de rueda delantera/trasera', 'Crapodinas', 'Rodamientos cónicos', 'Rulemanes de alternador']
     },
     {
@@ -82,7 +82,7 @@ export const SITE_CONFIG = {
       name: 'Distribución y Correas',
       shortDescription: 'Kits completos de distribución, bombas de agua, correas poli-V y tensores.',
       badge: 'Mantenimiento Crítico',
-      image: 'https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=800&q=80',
+      image: '/images/categories/distribucion.jpg',
       commonParts: ['Correas dentadas', 'Tensores fijos y móviles', 'Bombas de agua', 'Correas de accesorios']
     },
     {
@@ -90,7 +90,7 @@ export const SITE_CONFIG = {
       name: 'Frenos y Seguridad',
       shortDescription: 'Pastillas de freno, discos, campanas, cintas, flexibles y cilindros de rueda.',
       badge: 'Seguridad',
-      image: 'https://images.unsplash.com/photo-1600793575654-910699b5e4d4?auto=format&fit=crop&w=800&q=80',
+      image: '/images/categories/frenos.jpg',
       commonParts: ['Pastillas de freno cerámicas y semimetálicas', 'Discos ventilados y macizos', 'Líquidos de freno DOT4', 'Cintas y campanas']
     },
     {
@@ -98,7 +98,7 @@ export const SITE_CONFIG = {
       name: 'Suspensión y Dirección',
       shortDescription: 'Amortiguadores, extremos de dirección, rótulas, bujes, parrillas y bieletas.',
       badge: 'Confort y Control',
-      image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
+      image: '/images/categories/suspension.jpg',
       commonParts: ['Amortiguadores delanteros/traseros', 'Extremos de dirección', 'Rótulas de suspensión', 'Bieletas y bujes']
     },
     {
@@ -106,7 +106,7 @@ export const SITE_CONFIG = {
       name: 'Embragues y Transmisión',
       shortDescription: 'Kits de placa y disco, bombines hidráulicos, semiejes, juntas homocinéticas y fuelles.',
       badge: 'Transmisión',
-      image: 'https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=800&q=80',
+      image: '/images/categories/embragues.jpg',
       commonParts: ['Placas y discos de embrague', 'Juntas homocinéticas', 'Fuelles de semieje y dirección', 'Bombines de pedal']
     },
     {
@@ -114,7 +114,7 @@ export const SITE_CONFIG = {
       name: 'Filtros y Mantenimiento',
       shortDescription: 'Filtros de aceite, combustible, aire de motor y habitáculo. Líquidos refrigerantes.',
       badge: 'Preventivo',
-      image: 'https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=800&q=80',
+      image: '/images/categories/filtros.jpg',
       commonParts: ['Filtros de aceite', 'Filtros de aire', 'Filtros de nafta/diesel', 'Refrigerantes y anticongelantes']
     },
     {
@@ -122,7 +122,7 @@ export const SITE_CONFIG = {
       name: 'Retenes, Juntas y Sellos',
       shortDescription: 'Retenes de bancada, distribución, caja de cambio y juegos de juntas para motor.',
       badge: 'Motor',
-      image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80',
+      image: '/images/categories/juntas.jpg',
       commonParts: ['Retenes de árbol de levas', 'Retenes de cigüeñal', 'Juntas de tapa de válvulas', 'Selladores automotrices']
     },
     {
@@ -130,7 +130,7 @@ export const SITE_CONFIG = {
       name: 'Encendido y Electricidad',
       shortDescription: 'Bujías de encendido e incandescentes, cables de bujía, bobinas, lámparas y fusibles.',
       badge: 'Electricidad',
-      image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
+      image: '/images/categories/electricidad.jpg',
       commonParts: ['Bujías de iridio y cobre', 'Cables de bujía', 'Bobinas de encendido', 'Lámparas H4, H7, LED']
     }
   ] as CategoryItem[],
