@@ -1,11 +1,10 @@
 import React from 'react';
-import { ArrowDown, MessageCircle, ShieldCheck, MapPin } from 'lucide-react';
-import { SITE_CONFIG } from '../config/siteConfig';
+import { ArrowDown, MessageCircle, MapPin, Sparkles } from 'lucide-react';
 import { BrandCarousel } from './BrandCarousel';
 
 export const Hero: React.FC = () => {
   return (
-    <section id="inicio" className="relative min-h-[88vh] flex flex-col justify-between overflow-hidden pt-10 pb-0 bg-brand-dark">
+    <section id="inicio" className="relative min-h-[86vh] flex flex-col justify-between overflow-hidden pt-8 pb-0 bg-brand-dark">
       
       {/* Fondo cinematográfico automotriz con overlay minimalista */}
       <div className="absolute inset-0 z-0">
@@ -18,15 +17,7 @@ export const Hero: React.FC = () => {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-brand-accent/10 rounded-full blur-[140px] pointer-events-none" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center flex-1 justify-center py-8">
-        
-        {/* Badge superior minimalista */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-md mb-6 shadow-sm">
-          <span className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
-          <span className="text-xs font-mono tracking-wider text-slate-300 uppercase">
-            San Carlos de Bariloche · {SITE_CONFIG.business.address}
-          </span>
-        </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center flex-1 justify-center py-6">
 
         {/* Título Principal */}
         <h1 className="max-w-4xl font-heading font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.08] mb-6">
@@ -38,15 +29,15 @@ export const Hero: React.FC = () => {
           Especialistas en rodamientos, rulemanes, kits de distribución, frenos, suspensión y embragues para automotor e industria. Consultanos con marca, modelo y año.
         </p>
 
-        {/* Botones de acción principales (Estilo Kiur Code) */}
+        {/* Botones de acción principales */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto mb-12">
           
-          {/* Botón Principal animado estilo Kiur Code (.btn-wa + .dotlive) */}
+          {/* Botón Principal animado con flecha hacia abajo (.btn-wa + .dotlive) */}
           <a
             href="#cotizador"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase btn-wa shadow-md hover:shadow-xl transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase btn-wa shadow-md hover:shadow-xl transition-all group"
           >
-            <MessageCircle className="w-4 h-4 wa-icon" />
+            <ArrowDown className="w-4 h-4 text-white group-hover:translate-y-0.5 transition-transform" />
             <span>Consultar por un repuesto</span>
             <span className="dotlive" aria-hidden="true" />
           </a>
@@ -61,21 +52,27 @@ export const Hero: React.FC = () => {
           </a>
         </div>
 
-        {/* Los 3 Bloques de Confianza solicitados */}
+        {/* Las 3 Tarjetas con Cotización Online como punto prioritario */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl w-full text-left mb-6">
           
-          {/* Bloque 1: Pieza Exacta / Asesoramiento técnico */}
-          <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-zinc-950/80 border border-zinc-900 backdrop-blur-sm hover:border-brand-accent/40 transition-colors">
-            <div className="w-10 h-10 rounded-xl bg-brand-accent/10 border border-brand-accent/25 flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-5 h-5 text-brand-accent" />
+          {/* Tarjeta 1: Cotización Online (Reemplazando Pieza Exacta) */}
+          <a
+            href="#cotizador"
+            className="flex items-center gap-3.5 p-4 rounded-2xl bg-zinc-950/90 border border-brand-accent/40 hover:border-brand-accent backdrop-blur-sm transition-all group cursor-pointer"
+          >
+            <div className="w-10 h-10 rounded-xl bg-brand-accent/15 border border-brand-accent/30 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+              <Sparkles className="w-5 h-5 text-brand-accent" />
             </div>
             <div>
-              <p className="text-sm font-bold text-white leading-snug">Pieza Exacta</p>
-              <p className="text-xs text-slate-400">Asesoramiento técnico</p>
+              <p className="text-sm font-bold text-white leading-snug flex items-center gap-1.5">
+                <span>Cotización Online</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              </p>
+              <p className="text-xs text-slate-400">Respuesta rápida para tu vehículo</p>
             </div>
-          </div>
+          </a>
 
-          {/* Bloque 2: Respuesta Rápida / Atención directa por WhatsApp */}
+          {/* Tarjeta 2: Respuesta Rápida / Atención directa por WhatsApp */}
           <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-zinc-950/80 border border-zinc-900 backdrop-blur-sm hover:border-emerald-500/40 transition-colors">
             <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center shrink-0">
               <MessageCircle className="w-5 h-5 text-emerald-400" />
@@ -86,7 +83,7 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Bloque 3: Local en Bariloche / Retiro en Fagnano 1065 (Ejemplo) */}
+          {/* Tarjeta 3: Local en Bariloche / Retiro en Fagnano 1065 (Ejemplo) */}
           <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-zinc-950/80 border border-zinc-900 backdrop-blur-sm hover:border-brand-accent/40 transition-colors">
             <div className="w-10 h-10 rounded-xl bg-brand-accent/10 border border-brand-accent/25 flex items-center justify-center shrink-0">
               <MapPin className="w-5 h-5 text-brand-accent" />
@@ -101,7 +98,7 @@ export const Hero: React.FC = () => {
 
       </div>
 
-      {/* Carrusel Marquee de marcas exactamente igual al de Kiur Code (abajo de los 3 bloques) */}
+      {/* Carrusel Marquee de marcas */}
       <BrandCarousel />
 
     </section>
