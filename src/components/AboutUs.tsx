@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Award, CheckCircle } from 'lucide-react';
+import { Award, CheckCircle } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 
 export const AboutUs: React.FC = () => {
@@ -52,50 +52,19 @@ export const AboutUs: React.FC = () => {
 
           </div>
 
-          {/* Columna visual / Card de local minimalista con logotipo oficial */}
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden border border-white/[0.08] bg-brand-card p-7 sm:p-8 shadow-xl">
-              
-              <div className="flex items-center justify-between mb-6 pb-6 border-b border-white/[0.06]">
-                <div>
-                  <img
-                    src="/logo.png"
-                    alt="Hugo Repuestos"
-                    className="h-9 w-auto object-contain"
-                  />
-                  <p className="text-[11px] font-mono text-slate-400 mt-1.5">{SITE_CONFIG.business.commercialName}</p>
-                </div>
-                <div className="w-10 h-10 rounded-xl bg-brand-surface border border-white/[0.08] flex items-center justify-center text-brand-accent">
-                  <MapPin className="w-5 h-5" />
-                </div>
-              </div>
-
-              <div className="space-y-3 text-xs text-slate-300">
-                <div className="p-3 rounded-xl bg-brand-dark border border-white/[0.05]">
-                  <span className="block text-[10px] font-mono uppercase font-bold text-slate-400 mb-0.5">Ubicación Física</span>
-                  <span className="text-white font-medium">{SITE_CONFIG.business.fullAddress}</span>
-                </div>
-
-                <div className="p-3 rounded-xl bg-brand-dark border border-white/[0.05]">
-                  <span className="block text-[10px] font-mono uppercase font-bold text-slate-400 mb-0.5">Atención Directa</span>
-                  <span className="text-emerald-400 font-bold">{SITE_CONFIG.business.whatsappFormatted}</span>
-                </div>
-
-                <div className="p-3 rounded-xl bg-brand-dark border border-white/[0.05]">
-                  <span className="block text-[10px] font-mono uppercase font-bold text-slate-400 mb-0.5">Teléfono Fijo Registrado</span>
-                  <span className="text-slate-200 font-medium">{SITE_CONFIG.business.landlineDisplay}</span>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-white/[0.06]">
-                <a
-                  href="#cotizador"
-                  className="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-brand-surface hover:bg-white/[0.06] border border-white/[0.08] text-white text-xs font-semibold transition-colors"
-                >
-                  Consultar disponibilidad de repuestos
-                </a>
-              </div>
-
+          {/* Columna visual / Fotografía real del equipo en el local */}
+          <div className="relative group">
+            {/* Resplandor ambiental cálido de fondo */}
+            <div className="absolute -inset-2 bg-gradient-to-tr from-brand-accent/20 via-orange-500/10 to-transparent rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity pointer-events-none" />
+            
+            <div className="relative rounded-2xl overflow-hidden border border-white/[0.1] bg-brand-card shadow-2xl">
+              <img
+                src="/images/hugorepuestos-personal.jpg"
+                alt="Equipo de Hugo Repuestos en el mostrador del local en Bariloche"
+                loading="lazy"
+                className="w-full h-auto max-h-[580px] object-cover object-top transition-transform duration-500 group-hover:scale-[1.01]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/30 via-transparent to-transparent pointer-events-none" />
             </div>
           </div>
 
