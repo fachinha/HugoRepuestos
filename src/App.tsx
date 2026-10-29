@@ -4,8 +4,6 @@ import { MobileMenu } from './components/MobileMenu';
 import { Hero } from './components/Hero';
 import { CategoryCarousel } from './components/CategoryCarousel';
 import { PartQuoteForm } from './components/PartQuoteForm';
-import { ValueProps } from './components/ValueProps';
-import { PhotoGallery } from './components/PhotoGallery';
 import { AboutUs } from './components/AboutUs';
 import { LocationHours } from './components/LocationHours';
 import { FinalCTA } from './components/FinalCTA';
@@ -27,13 +25,11 @@ export const App: React.FC = () => {
         onClose={() => setIsMobileMenuOpen(false)}
       />
 
-      {/* Contenido principal */}
+      {/* Contenido principal simplificado y directo a la conversión */}
       <main className="flex-1">
         <Hero />
         <CategoryCarousel />
         <PartQuoteForm />
-        <ValueProps />
-        <PhotoGallery />
         <AboutUs />
         <LocationHours />
         <FinalCTA />

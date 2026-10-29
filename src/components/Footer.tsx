@@ -68,12 +68,6 @@ export const Footer: React.FC = () => {
                 <a href="#cotizador" className="hover:text-white transition-colors">Cotizar por WhatsApp</a>
               </li>
               <li>
-                <a href="#ventajas" className="hover:text-white transition-colors">Ventajas de comprar aquí</a>
-              </li>
-              <li>
-                <a href="#galeria" className="hover:text-white transition-colors">Galería de Productos</a>
-              </li>
-              <li>
                 <a href="#nosotros" className="hover:text-white transition-colors">Sobre Nosotros</a>
               </li>
               <li>

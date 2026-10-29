@@ -64,8 +64,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               { href: '#inicio', label: 'Inicio' },
               { href: '#categorias', label: 'Categorías de Repuestos' },
               { href: '#cotizador', label: 'Cotizar por WhatsApp' },
-              { href: '#ventajas', label: 'Ventajas de Comprar Aquí' },
-              { href: '#galeria', label: 'Galería de Productos' },
               { href: '#nosotros', label: 'Sobre Nosotros' },
               { href: '#ubicacion', label: 'Ubicación y Horarios' },
             ].map((link) => (

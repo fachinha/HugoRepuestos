@@ -61,12 +61,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu, isMobileMenuOp
             Cotizar Repuesto
           </a>
           <a 
-            href="#ventajas" 
-            className="hover:text-white transition-colors duration-150 py-1"
-          >
-            Ventajas
-          </a>
-          <a 
             href="#nosotros" 
             className="hover:text-white transition-colors duration-150 py-1"
           >
