@@ -111,10 +111,11 @@ export const LocationHours: React.FC = () => {
                       href={getGeneralContactWhatsAppUrl()}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-whatsapp hover:bg-whatsapp-hover text-slate-950 font-bold text-xs transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider btn-wa shadow-sm"
                     >
-                      <MessageCircle className="w-3.5 h-3.5 fill-current" />
+                      <MessageCircle className="w-3.5 h-3.5 wa-icon" />
                       <span>WhatsApp</span>
+                      <span className="dotlive" aria-hidden="true" />
                     </a>
                     <a
                       href={`tel:${SITE_CONFIG.business.phone.replace(/\D/g, '')}`}

@@ -46,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu, isMobileMenuOp
         </div>
       </div>
 
-      {/* Barra de navegación principal minimalista */}
+      {/* Barra de navegación principal */}
       <header 
         className={`sticky top-0 z-40 w-full transition-all duration-300 ${
           isScrolled 
@@ -108,17 +108,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu, isMobileMenuOp
             </a>
           </nav>
 
-          {/* Botón WhatsApp de Acción Rápida (Desktop) */}
+          {/* Botón de Contacto copiado exactamente de Kiur Code (.btn-wa + .dotlive) */}
           <div className="hidden sm:flex items-center gap-3">
             <a
               href={getGeneralContactWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Consultar por WhatsApp con Hugo Repuestos"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-slate-950 font-bold text-xs tracking-wide shadow-md shadow-whatsapp/20 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-whatsapp/50 group"
+              aria-label="Contactar por WhatsApp con Hugo Repuestos"
+              className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wider uppercase btn-wa shadow-sm hover:shadow-md transition-all"
             >
-              <MessageCircle className="w-3.5 h-3.5 fill-current group-hover:scale-110 transition-transform" />
-              <span>WhatsApp</span>
+              <MessageCircle className="w-3.5 h-3.5 wa-icon" />
+              <span>Contactar</span>
+              <span className="dotlive" aria-hidden="true" />
             </a>
           </div>
 
@@ -129,9 +130,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu, isMobileMenuOp
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              className="sm:hidden p-2 rounded-lg bg-whatsapp text-slate-950 font-bold active:scale-95 transition-transform"
+              className="sm:hidden p-2.5 rounded-full btn-wa text-white font-bold active:scale-95 transition-transform"
             >
-              <MessageCircle className="w-4 h-4 fill-current" />
+              <MessageCircle className="w-4 h-4 wa-icon" />
             </a>
 
             <button

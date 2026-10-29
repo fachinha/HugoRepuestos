@@ -150,16 +150,17 @@ export const CategoryCarousel: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Botón WhatsApp de la categoría */}
+                {/* Botón WhatsApp de la categoría estilo Kiur Code */}
                 <div className="mt-6 pt-3.5 border-t border-white/[0.06]">
                   <a
                     href={getCategoryWhatsAppUrl(cat.name)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-slate-950 font-bold text-xs shadow-sm transition-all duration-200 transform group-hover:translate-y-[-1px] focus:outline-none"
+                    className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full text-xs font-bold uppercase tracking-wider btn-wa shadow-sm"
                   >
-                    <MessageCircle className="w-3.5 h-3.5 fill-current" />
+                    <MessageCircle className="w-3.5 h-3.5 wa-icon" />
                     <span>Consultar {cat.name}</span>
+                    <span className="dotlive" aria-hidden="true" />
                   </a>
                 </div>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, Phone, ArrowUpRight, ShieldCheck } from 'lucide-react';
+import { MessageCircle, Phone, ShieldCheck } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 import { getGeneralContactWhatsAppUrl } from '../utils/whatsapp';
 import { InstagramIcon } from './icons/InstagramIcon';
@@ -26,23 +26,23 @@ export const FinalCTA: React.FC = () => {
           Escribinos por WhatsApp con la marca, modelo y año. Te confirmamos disponibilidad y cotización rápidamente.
         </p>
 
-        {/* Botones de Conversión Minimalistas */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+        {/* Botones de Conversión Estilo Kiur Code */}
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
           <a
             href={getGeneralContactWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Abrir WhatsApp para cotizar repuestos"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-slate-950 font-bold text-sm sm:text-base shadow-lg shadow-whatsapp/20 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 group focus:outline-none"
+            aria-label="Hablar por WhatsApp para cotizar repuestos"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase btn-wa shadow-xl transition-all"
           >
-            <MessageCircle className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" />
-            <span>Consultar por WhatsApp</span>
-            <ArrowUpRight className="w-4 h-4 opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <MessageCircle className="w-4 h-4 wa-icon" />
+            <span>Hablar por WhatsApp</span>
+            <span className="dotlive" aria-hidden="true" />
           </a>
 
           <a
             href={`tel:${SITE_CONFIG.business.phone.replace(/\D/g, '')}`}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-card hover:bg-white/[0.06] border border-white/[0.08] text-white font-medium text-sm sm:text-base transition-colors"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-brand-card hover:bg-white/[0.06] border border-white/[0.08] text-white font-medium text-xs sm:text-sm tracking-wider uppercase transition-colors"
           >
             <Phone className="w-4 h-4 text-brand-accent" />
             <span>Llamar al {SITE_CONFIG.business.phoneDisplay}</span>

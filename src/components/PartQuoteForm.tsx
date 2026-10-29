@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, MessageCircle, AlertCircle, CheckCircle2, Car, Sparkles } from 'lucide-react';
+import { MessageCircle, AlertCircle, CheckCircle2, Car, Sparkles } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 import { getPartQuoteWhatsAppUrl } from '../utils/whatsapp';
 
@@ -253,15 +253,15 @@ export const PartQuoteForm: React.FC = () => {
               </div>
             )}
 
-            {/* Botón WhatsApp */}
+            {/* Botón WhatsApp estilo Kiur Code */}
             <div>
               <button
                 type="submit"
-                className="w-full py-3.5 px-6 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-slate-950 font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg shadow-whatsapp/20 hover:shadow-whatsapp/30 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 group cursor-pointer"
+                className="w-full py-4 px-6 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase btn-wa shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2.5 cursor-pointer"
               >
-                <MessageCircle className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" />
+                <MessageCircle className="w-4 h-4 wa-icon" />
                 <span>Consultar por WhatsApp</span>
-                <Send className="w-3.5 h-3.5 ml-0.5 opacity-70 group-hover:translate-x-1 transition-transform" />
+                <span className="dotlive" aria-hidden="true" />
               </button>
               <p className="mt-2.5 text-center text-xs text-slate-400">
                 Al hacer clic se abrirá una conversación en WhatsApp con los datos completados.

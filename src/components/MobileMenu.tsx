@@ -82,17 +82,18 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </nav>
         </div>
 
-        {/* Sección inferior de contacto directo */}
+        {/* Sección inferior con botón de contacto btn-wa estilo Kiur Code */}
         <div className="pt-6 border-t border-white/[0.08] space-y-4">
           <a
             href={getGeneralContactWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             onClick={onClose}
-            className="w-full py-3 px-4 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-slate-950 font-bold text-center flex items-center justify-center gap-2 shadow-lg shadow-whatsapp/25 transition-all text-sm"
+            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full text-xs font-bold uppercase tracking-wider btn-wa shadow-lg"
           >
-            <MessageCircle className="w-4 h-4 fill-current" />
-            <span>Consultar por WhatsApp</span>
+            <MessageCircle className="w-4 h-4 wa-icon" />
+            <span>Hablar por WhatsApp</span>
+            <span className="dotlive" aria-hidden="true" />
           </a>
 
           <div className="space-y-2 text-xs text-slate-400 pt-1">

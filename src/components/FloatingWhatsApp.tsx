@@ -37,15 +37,15 @@ export const FloatingWhatsApp: React.FC = () => {
         </div>
       )}
 
-      {/* Botón flotante WhatsApp */}
+      {/* Botón flotante WhatsApp estilo Kiur Code */}
       <a
         href={getGeneralContactWhatsAppUrl()}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar a Hugo Repuestos por WhatsApp"
-        className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-whatsapp hover:bg-whatsapp-hover text-slate-950 flex items-center justify-center shadow-xl shadow-whatsapp/30 hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none group relative"
+        className="w-13 h-13 sm:w-14 sm:h-14 rounded-full btn-wa flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all focus:outline-none group relative"
       >
-        <MessageCircle className="w-7 h-7 fill-current relative z-10 transition-transform group-hover:rotate-6" />
+        <MessageCircle className="w-7 h-7 wa-icon" />
       </a>
     </div>
   );
