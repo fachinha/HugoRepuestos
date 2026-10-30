@@ -6,7 +6,6 @@ import { CategoryCarousel } from './components/CategoryCarousel';
 import { PartQuoteForm } from './components/PartQuoteForm';
 import { AboutUs } from './components/AboutUs';
 import { LocationHours } from './components/LocationHours';
-import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
@@ -32,7 +31,6 @@ export const App: React.FC = () => {
         <PartQuoteForm />
         <AboutUs />
         <LocationHours />
-        <FinalCTA />
       </main>
 
       {/* Pie de página con créditos de Kiur Code */}

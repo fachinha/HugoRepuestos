@@ -2,6 +2,7 @@ import React from 'react';
 import { MapPin, Clock, Phone, Navigation, MessageCircle, ExternalLink } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 import { getGeneralContactWhatsAppUrl } from '../utils/whatsapp';
+import { InstagramIcon } from './icons/InstagramIcon';
 
 export const LocationHours: React.FC = () => {
   return (
@@ -123,6 +124,33 @@ export const LocationHours: React.FC = () => {
                     >
                       <Phone className="w-3 h-3" />
                       <span>Llamar</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Seguinos en Instagram */}
+            <div className="p-6 rounded-2xl bg-brand-surface border border-white/[0.07] shadow-sm hover:border-pink-500/30 transition-all">
+              <div className="flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center shrink-0 text-pink-500">
+                  <InstagramIcon className="w-5 h-5" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-heading font-bold text-sm text-white uppercase tracking-wider">Instagram Oficial</h3>
+                  <p className="mt-1 text-xs text-slate-300">
+                    Seguinos para novedades, consultas y fotos de repuestos:
+                  </p>
+                  <div className="mt-3">
+                    <a
+                      href={SITE_CONFIG.business.instagramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-pink-500/20 to-purple-500/20 hover:from-pink-500/30 hover:to-purple-500/30 border border-pink-500/30 text-white font-semibold text-xs transition-all shadow-sm group"
+                    >
+                      <InstagramIcon className="w-4 h-4 text-pink-400 group-hover:scale-110 transition-transform" />
+                      <span>{SITE_CONFIG.business.instagramHandle}</span>
+                      <ExternalLink className="w-3 h-3 text-pink-300 opacity-70 group-hover:opacity-100" />
                     </a>
                   </div>
                 </div>

@@ -106,7 +106,7 @@ export const Footer: React.FC = () => {
           {/* Columna 4: Contacto Bariloche */}
           <div>
             <h4 className="font-heading font-bold text-xs text-white uppercase tracking-wider mb-4">
-              Atención en Bariloche
+              Contacto Directo
             </h4>
             <div className="space-y-2.5">
               <div className="flex items-start gap-2">
