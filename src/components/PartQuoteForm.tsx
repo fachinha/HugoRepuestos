@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { MessageCircle, AlertCircle, CheckCircle2, Car, Sparkles } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { AlertCircle, CheckCircle2, Car, Sparkles } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 import { getPartQuoteWhatsAppUrl } from '../utils/whatsapp';
 
@@ -13,6 +13,26 @@ export const PartQuoteForm: React.FC = () => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const popularBrands = SITE_CONFIG.vehicleBrands;
+
+  useEffect(() => {
+    const handleSelectCategory = (e: CustomEvent<string>) => {
+      if (e.detail) {
+        setPart(e.detail);
+        setErrors((prev) => {
+          const copy = { ...prev };
+          delete copy.part;
+          return copy;
+        });
+        const el = document.getElementById('cotizador');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    window.addEventListener('select-category' as any, handleSelectCategory as any);
+    return () => window.removeEventListener('select-category' as any, handleSelectCategory as any);
+  }, []);
 
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
@@ -64,17 +84,17 @@ export const PartQuoteForm: React.FC = () => {
     <section id="cotizador" className="py-20 relative overflow-hidden bg-brand-dark">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Encabezado minimalista */}
+        {/* Encabezado enfocado en cotización online y retiro en el local */}
         <div className="text-center max-w-xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-surface border border-white/[0.08] text-slate-300 text-xs font-mono font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-brand-surface border border-white/[0.08] text-slate-300 text-xs font-mono font-semibold uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5 text-brand-accent" />
-            Cotización Online
+            <span>Cotización Online · Retiro en Local</span>
           </div>
           <h2 className="font-heading font-black text-2xl sm:text-4xl text-white tracking-tight">
             ¿Buscás un repuesto para tu vehículo?
           </h2>
           <p className="mt-2 text-sm text-slate-400">
-            Completá los datos y te enviamos la disponibilidad y cotización directamente por WhatsApp.
+            Completá los datos de tu vehículo y la pieza que necesitás para cotizar y coordinar el retiro en nuestro local de Fagnano 1065.
           </p>
         </div>
 
@@ -245,26 +265,26 @@ export const PartQuoteForm: React.FC = () => {
               <div className="p-3.5 rounded-xl bg-brand-dark border border-white/[0.06] text-xs text-slate-300">
                 <div className="flex items-center gap-1.5 font-bold text-slate-400 mb-1">
                   <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-                  <span>Vista previa del mensaje a WhatsApp:</span>
+                  <span>Resumen de tu cotización:</span>
                 </div>
                 <p className="font-mono text-[11px] text-slate-300 whitespace-pre-line bg-black/50 p-2.5 rounded-lg border border-white/[0.04]">
-                  {`Hola, Hugo Repuestos! 👋 Quiero consultar por el repuesto: ${part || '[Repuesto]'} para ${brand || '[Marca]'} ${model || '[Modelo]'} (${year || '[Año]'})${notes ? ` - Nota: ${notes}` : ''}`}
+                  {`Repuesto: ${part || '[Repuesto]'}\nVehículo: ${brand || '[Marca]'} ${model || '[Modelo]'} (${year || '[Año]'})${notes ? `\nDetalles: ${notes}` : ''}\nRetiro: Local en Fagnano 1065, Bariloche`}
                 </p>
               </div>
             )}
 
-            {/* Botón WhatsApp estilo Kiur Code */}
+            {/* Botón COTIZAR estilo Kiur Code */}
             <div>
               <button
                 type="submit"
-                className="w-full py-4 px-6 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase btn-wa shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2.5 cursor-pointer"
+                className="w-full py-4 px-6 rounded-full text-sm sm:text-base font-black tracking-wider uppercase btn-wa shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2.5 cursor-pointer"
               >
-                <MessageCircle className="w-4 h-4 wa-icon" />
-                <span>Consultar por WhatsApp</span>
+                <Sparkles className="w-4 h-4 text-white" />
+                <span>COTIZAR</span>
                 <span className="dotlive" aria-hidden="true" />
               </button>
               <p className="mt-2.5 text-center text-xs text-slate-400">
-                Al hacer clic se abrirá una conversación en WhatsApp con los datos completados.
+                Al cotizar se consulta la disponibilidad y precio del repuesto para coordinar el retiro en nuestro local de Fagnano 1065.
               </p>
             </div>
 

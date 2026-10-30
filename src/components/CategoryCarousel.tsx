@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
-import { getCategoryWhatsAppUrl } from '../utils/whatsapp';
 
 export const CategoryCarousel: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -45,6 +44,10 @@ export const CategoryCarousel: React.FC = () => {
     if (cards[index]) {
       cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     }
+  };
+
+  const handleSelectCategory = (categoryName: string) => {
+    window.dispatchEvent(new CustomEvent('select-category', { detail: categoryName }));
   };
 
   return (
@@ -150,16 +153,15 @@ export const CategoryCarousel: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Botón WhatsApp de la categoría estilo Kiur Code */}
+                {/* Botón que lleva al Cotizador Online */}
                 <div className="mt-6 pt-3.5 border-t border-white/[0.06]">
                   <a
-                    href={getCategoryWhatsAppUrl(cat.name)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full text-xs font-bold uppercase tracking-wider btn-wa shadow-sm"
+                    href="#cotizador"
+                    onClick={() => handleSelectCategory(cat.name)}
+                    className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full text-xs font-bold uppercase tracking-wider btn-wa shadow-sm hover:shadow-md transition-all"
                   >
-                    <MessageCircle className="w-3.5 h-3.5 wa-icon" />
-                    <span>Consultar {cat.name}</span>
+                    <Sparkles className="w-3.5 h-3.5 text-white" />
+                    <span>Cotizar {cat.name}</span>
                     <span className="dotlive" aria-hidden="true" />
                   </a>
                 </div>

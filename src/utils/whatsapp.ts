@@ -49,7 +49,7 @@ export function getPartQuoteWhatsAppUrl(params: PartQuoteParams): string {
   }
 
   lines.push(``);
-  lines.push(`¿Me podrían confirmar si tienen disponibilidad o cotizármelo? Muchas gracias.`);
+  lines.push(`¿Me podrían confirmar disponibilidad, cotización y si puedo pasar a retirarlo por el local de Fagnano 1065? Muchas gracias.`);
 
   return buildWhatsAppUrl(lines.join('\n'));
 }
